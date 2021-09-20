@@ -1,11 +1,13 @@
 import Head from 'next/head'
-import Quote from './Quote'
 import data from '../quotes.json'
+import Quote from './Quote'
 
-export default function Home() {
+export default function Category() {
   const quotes = data
-  let quote = quotes[Math.floor(Math.random() * quotes.length)];
-  
+
+  const filtered = quotes.filter((quote) => {
+    return quote.Tags.includes('Do')})
+ 
   return (
     <div className='flex flex-col justify-center items-center'>
       <Head>
@@ -14,7 +16,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className='text-5xl font-bold'>Quote This</h1>
-        <Quote quote={quote} />
+      <ul>
+        {filtered.map((quote, i) => {
+          return <li key={i}>
+              <Quote quote={quote} />
+            </li>
+          })
+        }
+      </ul>
     </div>
   )
 }
