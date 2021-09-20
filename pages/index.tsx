@@ -5,7 +5,9 @@ export default function Home() {
   const quotes = data
   // console.log(quotes)
   let quote = quotes[Math.floor(Math.random() * quotes.length)];
-
+  const filtered = quotes.filter((quote) => {
+    return quote.Tags.includes('Do')})
+  console.log(filtered)
   return (
     <div className='flex flex-col justify-center items-center'>
       <Head>
@@ -16,11 +18,9 @@ export default function Home() {
       <h1 className='text-5xl font-bold'>Quote This</h1>
         <p>{quote.text}</p>
         <p>{quote.Author}</p>
-      {/* <ul>
-        {quotes.map((quote, i) => {
-          return <li key={i}>{quote.text}</li>
-        })}
-      </ul> */}
+      <ul>
+        {filtered.map((quote, i) => <li key={i}>{quote.text}</li>)}
+      </ul>
     </div>
   )
 }
