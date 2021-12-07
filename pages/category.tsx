@@ -9,21 +9,25 @@ export default function Category() {
     return quote.Tags.includes('Adventure')})
  
   return (
+    <>
+    <Head>
+      <title>quoteThis</title>
+      <meta name="description" content="A place to find and store great quotes" />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
     <div className='flex flex-col justify-center items-center'>
-      <Head>
-        <title>quoteThis</title>
-        <meta name="description" content="A place to find and store great quotes" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <h1 className='text-5xl font-bold'>Quote This</h1>
-      <ul>
-        {filtered.map((quote, i) => {
-          return <li key={i}>
-              <Quote quote={quote} />
-            </li>
-          })
-        }
-      </ul>
+      <div className="container mx-auto px-4">
+        <ul className='list-disc'>
+          {filtered.map((quote, i) => {
+            return <li key={i}>
+                <Quote quote={quote} />
+              </li>
+            })
+          }
+        </ul>
+      </div>
     </div>
+    </> 
   )
 }
