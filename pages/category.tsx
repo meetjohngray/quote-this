@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import data from '../quotes.json'
+import data from '../quotesId.json'
 import Quote from './Quote'
 
 export default function Category() {
@@ -16,7 +16,6 @@ export default function Category() {
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <div className='flex flex-col justify-center items-center'>
-      <h1 className='text-5xl font-bold'>Quote This</h1>
       <div className="container mx-auto px-4">
         <ul className='list-disc'>
           {filtered.map((quote, i) => {
