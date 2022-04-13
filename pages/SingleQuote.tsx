@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Quote } from "../model";
+import React, { useState } from "react"
+import { Quote } from "../model"
+import { Reveal, Tween } from 'react-gsap'
 
 interface Props {
   quote: Quote
@@ -11,8 +12,12 @@ export default function SingleQuote({quote}: Props) {
   
   return (
     <div className='opacity-50 mt-3'>
-      <p className = 'text-3xl pb-5'>{quote.Quote}</p>
-      <p className = 'text-2xl'>~ {(quote.Author) ? quote.Author : 'Unknown'} </p>
+      <Reveal repeat>
+        <Tween from={{ opacity: 0 }} duration={4}>
+          <p className = 'text-3xl pb-5'>{quote.Quote}</p>
+          <p className = 'text-2xl'>~ {(quote.Author) ? quote.Author : 'Unknown'} </p>
+        </Tween>
+      </Reveal>  
       { showDetails 
         ? 
         (<div className={ showDetails ? 'active:opacity-5 transition ease-in-and-out duration-5000' : 'opacity-0'}>
