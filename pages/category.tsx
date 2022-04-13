@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import data from '../quotesId.json'
-import Quote from './Quote'
+import Quote from './SingleQuote'
 
 export default function Category() {
   const quotes = data
