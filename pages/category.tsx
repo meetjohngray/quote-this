@@ -1,6 +1,5 @@
-import Head from 'next/head'
 import data from '../quotesId.json'
-import Quote from './SingleQuote'
+import Quote from '../components/SingleQuote'
 
 export default function Category() {
   const quotes = data
@@ -9,12 +8,6 @@ export default function Category() {
     return quote.Tags.includes('Adventure')})
  
   return (
-    <>
-    <Head>
-      <title>quoteThis</title>
-      <meta name="description" content="A place to find and store great quotes" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
     <div className='flex flex-col justify-center items-center'>
       <div className="container mx-auto px-4">
         <ul className='list-disc'>
@@ -27,6 +20,5 @@ export default function Category() {
         </ul>
       </div>
     </div>
-    </> 
   )
 }
