@@ -25,7 +25,7 @@ export default function SingleQuote({quote}: Props) {
             <p className = 'text-2xl'>~ {(quote.Author) ? quote.Author : 'Unknown'} </p>
               { showDetails ? <QuoteDetails quote={quote} />: '' }  
             <div className='mt-2'>
-              <p className = 'text-center text-blue-800 opacity-100 pt-5' onClick={clickHandler}>
+              <p className = 'text-center text-blue-200 dark:text-lime-400 opacity-100 pt-5' onClick={clickHandler}>
                 { detailsPresent(quote) ? (!showDetails ? `More...` : `Less...`) : '' }
               </p>
             </div>
