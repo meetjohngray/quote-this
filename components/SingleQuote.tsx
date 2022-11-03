@@ -21,11 +21,11 @@ export default function SingleQuote({quote}: Props) {
   return (
       <Tween from={{ opacity: 0 }} duration={4}>
           <div className='opacity-65 mt-3'>
-            <p className = 'text-3xl pb-5'>{quote.Quote}</p>
-            <p className = 'text-2xl'>~ {(quote.Author) ? quote.Author : 'Unknown'} </p>
+            <p className = 'text-xl sm:text-2xl md:text-3xl pb-5'>{quote.Quote}</p>
+            <p className = 'text-base'>~ {(quote.Author) ? quote.Author : 'Unknown'} </p>
               { showDetails ? <QuoteDetails quote={quote} />: '' }  
             <div className='mt-2'>
-              <p className = 'text-center text-blue-200 dark:text-lime-400 opacity-100 pt-5' onClick={clickHandler}>
+              <p className = 'text-sm text-center text-blue-400 dark:text-lime-400 opacity-100 pt-5' onClick={clickHandler}>
                 { detailsPresent(quote) ? (!showDetails ? `More...` : `Less...`) : '' }
               </p>
             </div>

@@ -10,9 +10,9 @@ export default function QuoteDetails({quote}: Props) {
     <>
     <Tween from={{ opacity: 0 , height: 0 }} duration={2}>
       <div className ='opacity-1'>
-        <p className = 'text-2xl'>{(quote.Source) ? `Source: ${quote.Source}` : ''} </p>
-        <p className = 'text-2xl'>{(quote.Rating) ? `Rating: ${quote.Rating}` : ''} </p>
-        <p className = 'text-2xl'>{(quote.Tags) ? `Tags: ${quote.Tags}` : ''} </p>
+        <p className = 'text-sm'>{(quote.Source) ? `Source: ${quote.Source}` : ''} </p>
+        <p className = 'text-sm'>{(quote.Rating) ? `Rating: ${quote.Rating}` : ''} </p>
+        <p className = 'text-sm'>{(quote.Tags) ? `Tags: ${quote.Tags}` : ''} </p>
       </div>
     </Tween>
     </>
